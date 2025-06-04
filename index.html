@@ -70,39 +70,14 @@
         </iframe>
   </div>
 
-  <!-- language breakdown section -->
-  <div class="viz-container">
-    <h2>language breakdown</h2>
-    <!-- replace the src URL below with your actual WDQS bar chart iframe -->
-    <iframe
-      src="https://query.wikidata.org/embed.html#SELECT%20%3FlangLabel%20(COUNT(%3Fitem)%20AS%20%3Fcount)%20WHERE%20%7B%20VALUES%20%3Fcollection%20%7B%20wd%3AQ15734302%20wd%3AQ19635234%20%7D%20%3Fitem%20wdt%3AP195%20%3Fcollection%20.%20%3Fitem%20p%3AP195%20%3FcollectionStatement%20.%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%20%3B%20pq%3AP2868%20wd%3AQ29188408%20.%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP407%20%3Flang%20.%20%7D%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22%7D%20%7D%20GROUP%20BY%20%3FlangLabel%20ORDER%20BY%20DESC(%3Fcount)#{"view":"bar","autoResize":true}"
-      loading="lazy"
-      sandbox="allow-scripts allow-same-origin"
-    ></iframe>
-  </div>
 
-  <!-- cover image gallery section -->
   <div class="viz-container">
-    <h2>cover image gallery</h2>
-    <!-- for a quick demo, you could use a WDQS “table” view and let people click images; 
-         but WDQS doesn’t have a true “gallery” embed. instead, we’ll embed a very simple 
-         hand-coded grid of images linking to Wikidata pages. swap in real URLs as you like. -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem;">
-      <!-- example hard-coded cell. you could script-generate these later. -->
-      <a href="https://www.wikidata.org/wiki/Q123456" target="_blank" style="text-decoration: none; color: inherit;">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ExampleCover.jpg/200px-ExampleCover.jpg"
-          alt="Example Book Title"
-          style="width: 100%; height: auto; display: block; border: 1px solid #ccc; border-radius: 4px;"
-        />
-        <div style="margin-top: 0.5rem; font-size: 0.9rem; text-align: center;">Example book title</div>
-      </a>
-      <!-- repeat for a handful of items to demo the concept -->
-    </div>
-    <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">
-      note: for a fully dynamic gallery you’d fetch image URLs via SPARQL and generate these grid cells
-      with JavaScript. this static grid simply showcases the idea.
-    </p>
+    <h2>Talen waarin de topstukken geschreven zijn (Wikidata)</h2>
+    <iframe 
+      style="width: 100%; height: 600px; border: none;"
+      src="https://query.wikidata.org/embed.html#SELECT%20%3FlangLabel%20%28COUNT%28%3Fitem%29%20AS%20%3Fcount%29%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20wdt%3AP195%20%3Fcollection%3B%0A%20%20%20%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP407%20%3Flang.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3FlangLabel%0AORDER%20BY%20DESC%20%28%3Fcount%29" 
+      referrerpolicy="origin" 
+      sandbox="allow-scripts allow-same-origin" ></iframe>
   </div>
 
 </body>
