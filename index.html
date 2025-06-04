@@ -59,7 +59,6 @@
         </iframe>
   </div>
 
-
   <div class="viz-container">
     <h2>Portretten van de auteurs, in chronologische volgorde, afbeeldingengalerij (Wikidata)</h2>
         <iframe 
@@ -70,12 +69,11 @@
         </iframe>
   </div>
 
-
   <div class="viz-container">
     <h2>Talen waarin de topstukken geschreven zijn (Wikidata)</h2>
     <iframe 
       style="width: 100%; height: 600px; border: none;"
-      src="https://query.wikidata.org/embed.html#SELECT%20%3FlangLabel%20%28COUNT%28%3Fitem%29%20AS%20%3Fcount%29%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20wdt%3AP195%20%3Fcollection%3B%0A%20%20%20%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP407%20%3Flang.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3FlangLabel%0AORDER%20BY%20DESC%20%28%3Fcount%29" 
+      src="https://query.wikidata.org/embed.html#%23defaultView%3ABubbleChart%0ASELECT%20%3FlangLabel%20%28COUNT%28%3Fitem%29%20AS%20%3Fcount%29%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20wdt%3AP195%20%3Fcollection%3B%0A%20%20%20%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP407%20%3Flang.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3FlangLabel%0AORDER%20BY%20DESC%20%28%3Fcount%29"
       referrerpolicy="origin" 
       sandbox="allow-scripts allow-same-origin" ></iframe>
   </div>
