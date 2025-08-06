@@ -62,12 +62,11 @@
 
   <div class="viz-container">
     <h2>Portretten van de auteurs, in chronologische volgorde, afbeeldingengalerij (Wikidata)</h2>
-        <iframe 
-        style="width: 100%; height: 600px; border: none;"
-        src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0A%23title%3A%20Faces%20of%20the%20writers%20of%20Topstukken%20%28collection%20highlights%29%20of%20Maastricht%20University%20Library%20and%20Radboud%20University%20Library%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fauthor%20%3FauthorLabel%20%3Fbirth%20%3Fdeath%20%3Fimage%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP50%20%3Fauthor.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fauthor%20wdt%3AP569%20%3Fbirth.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20%3Fauthor%20wdt%3AP570%20%3Fdeath.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20%3Fauthor%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cnl%2Cen%22.%20%7D%0A%7D%0AORDER%20BY%20%28%3Fbirth%29"
-        referrerpolicy="origin" 
-        sandbox="allow-scripts allow-same-origin" >
-        </iframe>
+        <iframe style="width: 80vw; height: 50vh; border: none;" 
+          src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0A%23title%3A%20Faces%20of%20the%20writers%20of%20Topstukken%20%28collection%20highlights%29%20of%20Maastricht%20University%20Library%20and%20Radboud%20University%20Library%0ASELECT%20%3Fitem%20%3FitemLabel%20%3FauthorLabel%20%3FcollectionLabel%20%3Fbirth%20%3Fdeath%20%3Fimage%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP50%20%3Fauthor.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fauthor%20wdt%3AP569%20%3Fbirth.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20%3Fauthor%20wdt%3AP570%20%3Fdeath.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20%3Fauthor%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cnl%2Cen%22.%20%7D%0A%7D%0AORDER%20BY%20%28%3Fbirth%29" 
+          referrerpolicy="origin" 
+          sandbox="allow-scripts allow-same-origin allow-popups" >
+          </iframe>
   </div>
 
   <div class="viz-container">
