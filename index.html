@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Topstukken visualisaties</title>
+  <title>Topstukkenproject: visualisaties</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -27,10 +27,10 @@
   </style>
 </head>
 <body>
-  <h1>Topstukken visualisaties</h1>
+  <h1>Topstukkenproject - Radboud Universiteit en Universiteit Maastricht</h1>
 
   <div class="viz-container">
-    <h2>Tijdlijn van de publicaties (Wikidata)</h2>
+    <h2>Tijdlijn van de topstukken (Wikidata)</h2>
         <iframe 
         style="width: 100%; height: 600px; border: none;"
         src="https://query.wikidata.org/embed.html#%23defaultView%3ATimeline%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fdate%20%3Fimage%20%3FcollectionLabel%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20wdt%3AP195%20%3Fcollection%3B%0A%20%20%20%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%20%3Fitem%20%28wdt%3AP571%7Cwdt%3AP577%29%20%3Fdate.%20%7D%0A%20%20FILTER%28%28%28BOUND%28%3Fdate%29%29%20%26%26%20%28%28YEAR%28%3Fdate%29%29%20%3E%3D%201400%20%29%29%20%26%26%20%28%28YEAR%28%3Fdate%29%29%20%3C%3D%202000%20%29%29%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cnl%2Cen%22.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP18%20%3Fimage.%20%7D%0A%7D%0AORDER%20BY%20%28%3Fdate%29" 
@@ -40,17 +40,18 @@
   </div>
 
   <div class="viz-container">
-    <h2>Tijdlijn van de publicaties (Histropedia)</h2>
+    <h2>Tijdlijn van de topstukken (Histropedia)</h2>
         <iframe
         src="https://js.histropedia.com/apps/query-timeline/?q=SELECT%20?item%20?itemLabel%20?Type%20?date%20?datePrecision%20?author%20?Collection%20?image%20WHERE%20%7B%0A%20%20VALUES%20?library%20%7B%20%0A%20%20%20%20wd:Q15734302%20%20%23%20Maastricht%20University%20Library%0A%20%20%20%20wd:Q19635234%20%20%23%20Radboud%20University%20Library%0A%20%20%7D%0A%0A%20%20?item%20wdt:P195%20?library%20.%0A%0A%20%20%23%20Collection%20highlight%20statements%0A%20%20?item%20p:P195%20?libraryStatement%20.%0A%20%20?libraryStatement%20ps:P195%20?library%20;%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20pq:P2868%20wd:Q29188408%20.%0A%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P18%20?image.%20%7D%0A%20%20%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P31%20?instance.%20%7D%0A%0A%20%20%23%20Inception%20date%20and%20precision%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20?item%20p:P571%20?inceptionStatement%20.%0A%20%20%20%20?inceptionStatement%20ps:P571%20?inception%20.%0A%20%20%20%20?inceptionStatement%20psv:P571%20?inceptionValueNode%20.%0A%20%20%20%20?inceptionValueNode%20wikibase:timePrecision%20?inceptionPrecision%20.%0A%20%20%7D%0A%0A%20%20%23%20Publication%20date%20and%20precision%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20?item%20p:P577%20?publicationStatement%20.%0A%20%20%20%20?publicationStatement%20ps:P577%20?publication%20.%0A%20%20%20%20?publicationStatement%20psv:P577%20?publicationValueNode%20.%0A%20%20%20%20?publicationValueNode%20wikibase:timePrecision%20?publicationPrecision%20.%0A%20%20%7D%0A%0A%20%20%23%20Determine%20date%20and%20precision%0A%20%20BIND(COALESCE(?inception,%20?publication)%20AS%20?date)%0A%20%20BIND(COALESCE(?inceptionPrecision,%20?publicationPrecision)%20AS%20?datePrecision)%0A%0A%20%20%23%20Authors%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P2093%20?authorStr%20.%20%7D%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P50%20?authorEntity%20.%20%7D%0A%20%20BIND(COALESCE(?authorStr,%20?authorEntityLabel)%20AS%20?author)%0A%0A%20%20SERVICE%20wikibase:label%20%7B%0A%20%20%20%20bd:serviceParam%20wikibase:language%20%22%5BAUTO_LANGUAGE%5D,mul,nl,en%22%20.%0A%20%20%20%20?item%20rdfs:label%20?itemLabel%20.%0A%20%20%20%20?library%20rdfs:label%20?Collection%20.%0A%20%20%20%20?authorEntity%20rdfs:label%20?authorEntityLabel%20.%0A%20%20%20%20?instance%20rdfs:label%20?Type%20.%0A%20%20%7D%0A%7D&md=true&g=item&l=item&t=itemLabel&s=date&sp=datePrecision&i=image&d=2&c=Collection&f=Type&v=t"
         width="100%"
         height="600px"
-        frameborder="0"
-      ></iframe>
+        frameborder="0" >
+      </iframe>
+    Dubbelklik op elk element om het Wikidata-item te bekijken.
   </div>
   
   <div class="viz-container">
-    <h2>Kaart van de locaties waar de topstukken gepubliceerd zijn (Wikidata)</h2>
+    <h2>Kaart van de locaties waar de topstukken gepubliceerd, gedrukt of geproduceerd zijn (Wikidata)</h2>
         <iframe 
         style="width: 100%; height: 600px; border: none;"
         src="https://query.wikidata.org/embed.html#%23defaultView%3AMap%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fplace_of_publication%20%3Fplace_of_publicationLabel%20%3Fcoordinate_location%20%3Fimage%20WHERE%20%7B%0A%20%20%7B%0A%20%20%20%20SELECT%20DISTINCT%20%3Fitem%20WHERE%20%7B%0A%20%20%20%20%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20%20%20%20%20wd%3AQ15734302%0A%20%20%20%20%20%20%20%20wd%3AQ19635234%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%3Fitem%20p%3AP195%20%3Fstatement.%0A%20%20%20%20%20%20%3Fstatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP291%20%3Fplace_of_publication.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fplace_of_publication%20wdt%3AP625%20%3Fcoordinate_location.%20%7D%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cnl%2Cen%22.%20%7D%0A%7D"
@@ -75,8 +76,32 @@
       style="width: 100%; height: 600px; border: none;"
       src="https://query.wikidata.org/embed.html#%23defaultView%3ABubbleChart%0ASELECT%20%3FlangLabel%20%28COUNT%28%3Fitem%29%20AS%20%3Fcount%29%20WHERE%20%7B%0A%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20wd%3AQ15734302%0A%20%20%20%20wd%3AQ19635234%0A%20%20%7D%0A%20%20%3Fitem%20wdt%3AP195%20%3Fcollection%3B%0A%20%20%20%20p%3AP195%20%3FcollectionStatement.%0A%20%20%3FcollectionStatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP407%20%3Flang.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3FlangLabel%0AORDER%20BY%20DESC%20%28%3Fcount%29"
       referrerpolicy="origin" 
-      sandbox="allow-scripts allow-same-origin" ></iframe>
+      sandbox="allow-scripts allow-same-origin" >
+      </iframe>
   </div>
 
+<h1>Topstukken in Nederlandse bibliotheken</h2>
+
+Op Wikidata zijn, naast topstukken van Radboud Universiteit en Universiteit Maastricht, ook topstukken beschreven van een aantal andere bibliotheekcollecties, namelijk topstukken van de Koninklijke Bibliotheek (<a href="https://nl.wikipedia.org/wiki/Wikipedia:GLAM/Koninklijke_Bibliotheek_en_Nationaal_Archief/Topstukken">lees meer info over het project op Wikidata</a>), en een paar topstukken van het Afrika-Studiecentrum Leiden.
+
+    <div class="viz-container">
+    <h2>Afbeeldingen van topstukken in Nederlandse bibliotheken, in chronologische volgorde (Wikidata)</h2>
+    <iframe style="width: 100%; height: 600px; border: none;"
+      src="https://query.wikidata.org/embed.html#%23defaultView%3AImageGrid%0A%23title%3A%20Topstukken%20%28Collection%20highlights%29%20of%20Dutch%20library%20collections%0ASELECT%20%3Fitem%20%3FitemLabel%20%3FtimelineDate%20%3FcollectionLabel%20%3Fimage%20%28GROUP_CONCAT%28DISTINCT%20%3FauthorLabel%3B%20SEPARATOR%20%3D%20%22%2C%20%22%29%20AS%20%3Fauthors%29%20%28GROUP_CONCAT%28DISTINCT%20%3FcreatorLabel%3B%20SEPARATOR%20%3D%20%22%2C%20%22%29%20AS%20%3Fcreators%29%20WHERE%20%7B%0A%20%20%7B%0A%20%20%20%20SELECT%20%3Fitem%20%3Fcollection%20%28MIN%28%3Fdate_%29%20AS%20%3FtimelineDate%29%20%3Fimage%20WHERE%20%7B%0A%20%20%20%20%20%20%3Fitem%20p%3AP195%20%3Fcs.%0A%20%20%20%20%20%20%3Fcs%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20%20%20%20%20%3Fcollection%20wdt%3AP17%20wd%3AQ55%3B%0A%20%20%20%20%20%20%20%20%28wdt%3AP31%2F%28wdt%3AP279%2a%29%29%20wd%3AQ7075.%0A%20%20%20%20%20%20OPTIONAL%20%7B%0A%20%20%20%20%20%20%20%20%3Fitem%20%28wdt%3AP571%7Cwdt%3AP577%29%20%3Fdate_.%0A%20%20%20%20%20%20%20%20FILTER%28%3Fdate_%20%3C%20%28NOW%28%29%29%29%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20GROUP%20BY%20%3Fitem%20%3Fcollection%20%3Fimage%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP50%20%3Fauthor.%0A%20%20%20%20%3Fauthor%20rdfs%3Alabel%20%3FauthorLabel.%0A%20%20%20%20FILTER%28%28LANG%28%3FauthorLabel%29%29%20%3D%20%22en%22%29%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP170%20%3Fcreator.%0A%20%20%20%20%3Fcreator%20rdfs%3Alabel%20%3FcreatorLabel.%0A%20%20%20%20FILTER%28%28LANG%28%3FcreatorLabel%29%29%20%3D%20%22en%22%29%0A%20%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22mul%2Cnl%2Cen%22.%20%7D%0A%7D%0AGROUP%20BY%20%3Fitem%20%3FitemLabel%20%3FtimelineDate%20%3FcollectionLabel%20%3Fimage%0AORDER%20BY%20%28%3FtimelineDate%29" 
+      referrerpolicy="origin" 
+      sandbox="allow-scripts allow-same-origin allow-popups" >
+      </iframe>
+  </div>
+
+  <div class="viz-container">
+    <h2>Tijdlijn van topstukken in Nederlandse bibliotheken (Histropedia)</h2>
+    <iframe style="width: 100%; height: 600px; border: none;"
+      src="https://js.histropedia.com/apps/query-timeline/?q=SELECT%20?item%20?itemLabel%20?Type%20?date%20?datePrecision%20?author%20?Collection%20?image%20WHERE%20%7B%0A%0A%20%20?item%20wdt:P195%20?library%20.%0A%0A%20%20%23%20Collection%20highlight%20statements%0A%20%20?item%20p:P195%20?libraryStatement%20.%0A%20%20?libraryStatement%20ps:P195%20?library%20;%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20pq:P2868%20wd:Q29188408%20.%0A%0A%20%20?library%20wdt:P17%20wd:Q55%20;%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20country%20%3D%20Netherlands%0A%20%20%20%20%20%20%20%20%20%20%20%20%20wdt:P31/wdt:P279*%20wd:Q7075%20.%20%20%20%20%20%20%20%20%20%23%20instance%20of%20(or%20subclass)%20%3D%20library%0A%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P18%20?image.%20%7D%0A%20%20%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P31%20?instance.%20%7D%0A%0A%20%20%23%20Inception%20date%20and%20precision%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20?item%20p:P571%20?inceptionStatement%20.%0A%20%20%20%20?inceptionStatement%20ps:P571%20?inception%20.%0A%20%20%20%20?inceptionStatement%20psv:P571%20?inceptionValueNode%20.%0A%20%20%20%20?inceptionValueNode%20wikibase:timePrecision%20?inceptionPrecision%20.%0A%20%20%7D%0A%0A%20%20%23%20Publication%20date%20and%20precision%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20?item%20p:P577%20?publicationStatement%20.%0A%20%20%20%20?publicationStatement%20ps:P577%20?publication%20.%0A%20%20%20%20?publicationStatement%20psv:P577%20?publicationValueNode%20.%0A%20%20%20%20?publicationValueNode%20wikibase:timePrecision%20?publicationPrecision%20.%0A%20%20%7D%0A%0A%20%20%23%20Determine%20date%20and%20precision%0A%20%20BIND(COALESCE(?inception,%20?publication)%20AS%20?date)%0A%20%20BIND(COALESCE(?inceptionPrecision,%20?publicationPrecision)%20AS%20?datePrecision)%0A%0A%20%20%23%20Authors%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P2093%20?authorStr%20.%20%7D%0A%20%20OPTIONAL%20%7B%20?item%20wdt:P50%20?authorEntity%20.%20%7D%0A%20%20BIND(COALESCE(?authorStr,%20?authorEntityLabel)%20AS%20?author)%0A%0A%20%20SERVICE%20wikibase:label%20%7B%0A%20%20%20%20bd:serviceParam%20wikibase:language%20%22%5BAUTO_LANGUAGE%5D,mul,nl,en%22%20.%0A%20%20%20%20?item%20rdfs:label%20?itemLabel%20.%0A%20%20%20%20?library%20rdfs:label%20?Collection%20.%0A%20%20%20%20?authorEntity%20rdfs:label%20?authorEntityLabel%20.%0A%20%20%20%20?instance%20rdfs:label%20?Type%20.%0A%20%20%7D%0A%7D&d=2&md=true&g=item&l=item&t=itemLabel&s=date&sp=datePrecision&i=image&c=Collection&f=Type&v=t" 
+      referrerpolicy="origin" 
+      sandbox="allow-scripts allow-same-origin allow-popups" >
+      </iframe>
+    Dubbelklik op elk element om het Wikidata-item te bekijken.
+  </div>
+  
 </body>
 </html>
