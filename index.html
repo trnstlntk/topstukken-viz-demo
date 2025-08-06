@@ -53,11 +53,11 @@
   <div class="viz-container">
     <h2>Kaart van de locaties waar de topstukken gepubliceerd, gedrukt of geproduceerd zijn (Wikidata)</h2>
         <iframe 
-        style="width: 100%; height: 600px; border: none;"
-        src="https://query.wikidata.org/embed.html#%23defaultView%3AMap%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fplace_of_publication%20%3Fplace_of_publicationLabel%20%3Fcoordinate_location%20%3Fimage%20WHERE%20%7B%0A%20%20%7B%0A%20%20%20%20SELECT%20DISTINCT%20%3Fitem%20WHERE%20%7B%0A%20%20%20%20%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20%20%20%20%20wd%3AQ15734302%0A%20%20%20%20%20%20%20%20wd%3AQ19635234%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%3Fitem%20p%3AP195%20%3Fstatement.%0A%20%20%20%20%20%20%3Fstatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP291%20%3Fplace_of_publication.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fplace_of_publication%20wdt%3AP625%20%3Fcoordinate_location.%20%7D%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cnl%2Cen%22.%20%7D%0A%7D"
-        referrerpolicy="origin" 
-        sandbox="allow-scripts allow-same-origin" >
-        </iframe>
+          style="width: 80vw; height: 50vh; border: none;" 
+          src="https://query.wikidata.org/embed.html#%23defaultView%3AMap%0ASELECT%20%3Fitem%20%3FitemLabel%20%3FplaceLabel%20%3Fcoordinate_location%20%3Fimage%20WHERE%20%7B%0A%20%20%7B%0A%20%20%20%20SELECT%20DISTINCT%20%3Fitem%20WHERE%20%7B%0A%20%20%20%20%20%20VALUES%20%3Fcollection%20%7B%0A%20%20%20%20%20%20%20%20wd%3AQ15734302%0A%20%20%20%20%20%20%20%20wd%3AQ19635234%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%3Fitem%20p%3AP195%20%3Fstatement.%0A%20%20%20%20%20%20%3Fstatement%20ps%3AP195%20%3Fcollection%3B%0A%20%20%20%20%20%20%20%20pq%3AP2868%20wd%3AQ29188408.%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP291%7Cwdt%3AP1071%20%3Fplace.%0A%20%20%20%20OPTIONAL%20%7B%20%3Fplace%20wdt%3AP625%20%3Fcoordinate_location.%20%7D%0A%20%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cnl%2Cen%22.%20%7D%0A%7D" 
+          referrerpolicy="origin" 
+          sandbox="allow-scripts allow-same-origin allow-popups" >
+          </iframe>
   </div>
 
   <div class="viz-container">
